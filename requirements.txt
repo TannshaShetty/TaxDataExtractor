@@ -1,4 +1,3 @@
-touch requirements.txt
 pymupdf
 pandas
 streamlit
