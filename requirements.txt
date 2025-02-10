@@ -1,0 +1,8 @@
+touch requirements.txt
+pymupdf
+pandas
+streamlit
+openpyxl
+python-dotenv
+google-generativeai
+Pillow
