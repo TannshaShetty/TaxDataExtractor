@@ -1,4 +1,3 @@
-# TaxDataExtractor
 import streamlit as st
 import fitz  # PyMuPDF
 from PIL import Image
@@ -136,7 +135,8 @@ def app():
 
                 # Display formatted table with auto-adjusted column width
                 st.subheader("📊 Extracted Invoice Data")
-                st.dataframe(df.style.set_properties({'text-align': 'left'}), use_container_width=True)
+                st.dataframe(df.style.set_table_styles([{"selector": "td", "props": [("text-align", "left")]}]),
+                             use_container_width=True)
 
                 # Save as Excel with proper formatting
                 output_path = f"temp/{uploaded_file.name}_invoice.xlsx"
@@ -149,6 +149,5 @@ def app():
             st.error(f"⚠ Error: {e}")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app()
-
